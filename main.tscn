@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2xwmsan323c1"]
+
+[ext_resource type="Script" uid="uid://bn2tvm6ok53et" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://cjedf66q58khs" path="res://grid_container.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://du2cvmepjbljk" path="res://may_hut.tscn" id="2_0xm2m"]
+[ext_resource type="Theme" uid="uid://dtwqphtkddd5e" path="res://main.tres" id="2_1bvp3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7dm0k"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h2yge")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="run" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1497.0
+offset_top = 164.0
+offset_right = 1649.0
+offset_bottom = 224.0
+theme = ExtResource("2_1bvp3")
+text = "Chay
+"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -851.0
+offset_top = -536.5
+offset_right = 271.0
+offset_bottom = 536.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_7dm0k")
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -400.0
+offset_right = 400.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 80
+theme_override_constants/v_separation = 80
+columns = 10
+script = ExtResource("1_ig7tw")
+
+[node name="may_hut" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0xm2m")]
+z_index = 4
+position = Vector2(-174, 28)
+
+[node name="KiemTraO" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1496.0
+offset_top = 248.0
+offset_right = 1648.0
+offset_bottom = 304.0
+theme = ExtResource("2_1bvp3")
+text = "Kiem tra"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+
+[connection signal="pressed" from="run" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="KiemTraO" to="." method="_on_kiem_tra_o_pressed"]

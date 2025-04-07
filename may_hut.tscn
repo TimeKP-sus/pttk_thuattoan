@@ -1,0 +1,167 @@
+[gd_scene load_steps=5 format=3 uid="uid://du2cvmepjbljk"]
+
+[ext_resource type="Texture2D" uid="uid://boe43dl7rv525" path="res://icon.svg" id="1_5on1q"]
+[ext_resource type="Script" uid="uid://cw2lx8qmrqkmk" path="res://may_hut.gd" id="1_sg1n3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sg1n3"]
+size = Vector2(16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sg1n3"]
+font_size = 14
+font_color = Color(0.000693898, 0.000693898, 0.000693898, 1)
+
+[node name="mayhut" type="CharacterBody2D"]
+script = ExtResource("1_sg1n3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_5on1q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(40, 40)
+shape = SubResource("RectangleShape2D_sg1n3")
+
+[node name="qlcambien" type="Node2D" parent="."]
+
+[node name="phai" type="RayCast2D" parent="qlcambien"]
+position = Vector2(64, 40)
+target_position = Vector2(56, 0)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Label" type="Label" parent="qlcambien/phai"]
+offset_left = 64.0
+offset_top = -16.0
+offset_right = 128.0
+offset_bottom = 15.0
+label_settings = SubResource("LabelSettings_sg1n3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="qlcambien/phai"]
+
+[node name="duoi" type="RayCast2D" parent="qlcambien"]
+position = Vector2(40, 72)
+target_position = Vector2(0, 48)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Label" type="Label" parent="qlcambien/duoi"]
+offset_left = -32.0
+offset_top = 56.0
+offset_right = 32.0
+offset_bottom = 87.0
+label_settings = SubResource("LabelSettings_sg1n3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="qlcambien/duoi"]
+
+[node name="duoiphai" type="RayCast2D" parent="qlcambien"]
+position = Vector2(64, 72)
+target_position = Vector2(56, 48)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Label" type="Label" parent="qlcambien/duoiphai"]
+offset_left = 32.0
+offset_top = 56.0
+offset_right = 96.0
+offset_bottom = 87.0
+label_settings = SubResource("LabelSettings_sg1n3")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line2D" type="Line2D" parent="qlcambien/duoiphai"]
+
+[node name="duoitrai" type="RayCast2D" parent="qlcambien"]
+position = Vector2(16, 72)
+target_position = Vector2(-56, 48)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Label" type="Label" parent="qlcambien/duoitrai"]
+offset_left = -96.0
+offset_top = 56.0
+offset_right = -32.0
+offset_bottom = 87.0
+label_settings = SubResource("LabelSettings_sg1n3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="qlcambien/duoitrai"]
+
+[node name="trai" type="RayCast2D" parent="qlcambien"]
+position = Vector2(16, 40)
+target_position = Vector2(-56, 0)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Label" type="Label" parent="qlcambien/trai"]
+offset_left = -136.0
+offset_top = -16.0
+offset_right = -72.0
+offset_bottom = 15.0
+label_settings = SubResource("LabelSettings_sg1n3")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line2D" type="Line2D" parent="qlcambien/trai"]
+
+[node name="tren" type="RayCast2D" parent="qlcambien"]
+position = Vector2(40, 8)
+target_position = Vector2(0, -48)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Label" type="Label" parent="qlcambien/tren"]
+offset_left = -32.0
+offset_top = -88.0
+offset_right = 32.0
+offset_bottom = -56.0
+label_settings = SubResource("LabelSettings_sg1n3")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line2D" type="Line2D" parent="qlcambien/tren"]
+
+[node name="trentrai" type="RayCast2D" parent="qlcambien"]
+position = Vector2(16, 8)
+target_position = Vector2(-56, -48)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Label" type="Label" parent="qlcambien/trentrai"]
+offset_left = -88.0
+offset_top = -88.0
+offset_right = -24.0
+offset_bottom = -56.0
+label_settings = SubResource("LabelSettings_sg1n3")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line2D" type="Line2D" parent="qlcambien/trentrai"]
+
+[node name="trenphai" type="RayCast2D" parent="qlcambien"]
+position = Vector2(64, 8)
+target_position = Vector2(56, -48)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Label" type="Label" parent="qlcambien/trenphai"]
+offset_left = 24.0
+offset_top = -88.0
+offset_right = 88.0
+offset_bottom = -56.0
+label_settings = SubResource("LabelSettings_sg1n3")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Line2D" type="Line2D" parent="qlcambien/trenphai"]
+width = 1.0
