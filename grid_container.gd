@@ -11,3 +11,5 @@ func _ready() -> void:
 		add_child(oCham)
 		print("Ô số ",str(i)," đã được thêm")
 	pass # Replace with function body.
+func _process(delta: float) -> void:
+	pass # Replace with function body.
